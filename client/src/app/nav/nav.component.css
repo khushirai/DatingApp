@@ -1,3 +1,13 @@
-.dropdown-toggle, .dropdown-item{
+.dropdown-toggle {
     cursor:pointer;
+    text-decoration: none;
+},
+
+.dropdown-item{
+    cursor:pointer;
+    text-decoration: none;
+},
+
+.form{
+    flex-direction: row ;
 }
