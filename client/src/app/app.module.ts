@@ -21,7 +21,8 @@ import { ServerErrorComponent } from './server-error/server-error.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
-
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,12 +45,14 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule
   ],
   // multi true make sure we are adding interceptors, but not replacing the original ones
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
-    {provide:HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true},
+    {provide:HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true}
   ],
   bootstrap: [AppComponent]
 })
