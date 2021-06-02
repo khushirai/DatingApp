@@ -1,13 +1,19 @@
 .dropdown-toggle {
     cursor:pointer;
     text-decoration: none;
-},
+}
 
 .dropdown-item{
     cursor:pointer;
     text-decoration: none;
-},
+}
 
 .form{
     flex-direction: row ;
+}
+
+img{
+    max-height: 50px;
+    border: 2px solid #fff;
+    display: inline;
 }
